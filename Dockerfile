@@ -28,7 +28,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh
     && nvm alias default $NODE_VERSION \
     && nvm use default
 
-RUN source $NVM_DIR/nvm.sh && npm install -g nodemon npm request
+RUN source $NVM_DIR/nvm.sh && npm install -g npm@3
 
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
