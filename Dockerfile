@@ -19,7 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 4
+ENV NODE_VERSION 0.12
 
 # Install nvm with node and npm
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
