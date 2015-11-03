@@ -1,0 +1,20 @@
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y -q --no-install-recommends \
+        apt-transport-https \
+        build-essential \
+        ca-certificates \
+        curl \
+        git \
+        libssl-dev \
+        python \
+        rsync \
+        software-properties-common \
+        wget \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN sed -i '1s/^/force_color_prompt=yes\n/' /root/.bashrc
+
+ENV NVM_DIR /usr/local/nvm
+ENV NODE_VERSION 4
+
+
+
