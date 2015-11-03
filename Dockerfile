@@ -19,7 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 5
+ENV NODE_VERSION 4
 
 # Install nvm with node and npm
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
@@ -28,7 +28,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh
     && nvm alias default $NODE_VERSION \
     && nvm use default
 
-RUN source $NVM_DIR/nvm.sh && npm install -g nodemon npm request
+RUN source $NVM_DIR/nvm.sh && npm install -g npm@2
 
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
